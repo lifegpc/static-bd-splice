@@ -41,6 +41,9 @@ jobs:
             mingw64/mingw-w64-x86_64-nasm
             mingw64/mingw-w64-x86_64-pkg-config
 
+      - name: Update Submodule
+        run: git submodule update --init --recursive
+
       - name: Setup
         run: ./setup.sh
 
