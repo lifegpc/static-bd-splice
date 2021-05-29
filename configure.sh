@@ -7,6 +7,5 @@ FLAGS=--enable-shared=no
 FLAGS+=' --enable-static=yes'
 FLAGS+=" --prefix=$loc"
 FLAGS+=' LDFLAGS=-static'
-FLAGS+=' "PKG_CONFIG=pkg-config --static"'
-./configure $FLAGS
+./configure $FLAGS PKG_CONFIG="pkg-config --static"
 echo $?
