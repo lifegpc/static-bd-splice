@@ -2,7 +2,7 @@
 loc=`pwd`/bluray
 mkdir -p bluray
 cd libbluray
-git apply --ignore-space-change libbluray.patch
+git apply --ignore-space-change ../libbluray.patch
 autoreconf -vi
 FLAGS=--disable-bdjava-jar
 FLAGS+=' --enable-shared=no'
