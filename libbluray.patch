@@ -1,24 +1,29 @@
 diff --git a/Makefile.am b/Makefile.am
-index 49ea57dd..013bc48d 100644
+index 49ea57dd..dbce4bf6 100644
 --- a/Makefile.am
 +++ b/Makefile.am
-@@ -298,9 +298,11 @@ bin_PROGRAMS = \
+@@ -298,10 +298,12 @@ bin_PROGRAMS = \
  	bd_info
  
  bd_info_SOURCES = src/examples/bd_info.c
+-bd_info_LDADD = libbluray.la
 +bd_info_LDFLAGS = -static
- bd_info_LDADD = libbluray.la
++bd_info_LDADD = libbluray.la $(LIBXML2_LIBS) $(FT2_LIBS) $(FONTCONFIG_LIBS) $(LIBUDFREAD_LIBS) $(EXTRA_LIBS)
  
  bd_splice_SOURCES = src/examples/bdsplice.c
+-bd_splice_LDADD = libbluray.la
 +bd_splice_LDFLAGS = -static
- bd_splice_LDADD = libbluray.la
++bd_splice_LDADD = libbluray.la $(LIBXML2_LIBS) $(FT2_LIBS) $(FONTCONFIG_LIBS) $(LIBUDFREAD_LIBS) $(EXTRA_LIBS)
  
  bdj_test_SOURCES = src/devtools/bdj_test.c
-@@ -327,6 +329,7 @@ libbluray_test_SOURCES = src/examples/libbluray_test.c
+ bdj_test_LDADD = libbluray.la
+@@ -327,7 +329,8 @@ libbluray_test_SOURCES = src/examples/libbluray_test.c
  libbluray_test_LDADD = libbluray.la
  
  bd_list_titles_SOURCES = src/examples/list_titles.c
+-bd_list_titles_LDADD = libbluray.la
 +bd_list_titles_LDFLAGS = -static
- bd_list_titles_LDADD = libbluray.la
++bd_list_titles_LDADD = libbluray.la $(LIBXML2_LIBS) $(FT2_LIBS) $(FONTCONFIG_LIBS) $(LIBUDFREAD_LIBS) $(EXTRA_LIBS)
  
  mobj_dump_CFLAGS = $(AM_CFLAGS)
+ mobj_dump_SOURCES = \
