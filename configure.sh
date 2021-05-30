@@ -1,4 +1,5 @@
 #!/bin/bash
+git apply --ignore-space-change libbluray.patch
 loc=`pwd`/bluray
 mkdir -p bluray
 cd libbluray
