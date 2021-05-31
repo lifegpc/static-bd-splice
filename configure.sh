@@ -2,8 +2,12 @@
 loc=`pwd`/bluray
 mkdir -p bluray
 cd libbluray
-git apply --ignore-space-change -v ../libbluray.patch
-autoreconf -vi
+aclocal -I m4
+libtoolize --copy -all-static
+aclocal -I m4
+autoconf
+autoheader
+automake --add-missing --copy --no-force
 FLAGS=--disable-bdjava-jar
 FLAGS+=' --enable-shared=no'
 FLAGS+=' --enable-static=yes'
